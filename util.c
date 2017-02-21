@@ -28,6 +28,7 @@
 #include <sys/un.h>
 
 #include "init.h"
+#include "android_ids.h"
 
 static int log_fd = -1;
 /* Inital log level before init.rc is parsed and this this is reset. */
@@ -71,13 +72,13 @@ void log_write(int level, const char *fmt, ...)
  */
 static unsigned int android_name_to_id(const char *name)
 {
-/*    struct android_id_info *info = android_ids;
+    struct android_id_info *info = android_ids;
     unsigned int n;
 
     for (n = 0; n < android_id_count; n++) {
         if (!strcmp(info[n].name, name))
             return info[n].aid;
-    }*/
+    }
 
     return -1U;
 }
